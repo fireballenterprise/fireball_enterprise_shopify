@@ -1,0 +1,32 @@
+{%- comment -%} Fireball: Earned Points snippet (10 pts per $1 base) {%- endcomment -%}
+{%- assign earn_rate_times100 = 1000 -%} {%- comment -%}10 pts × 100{%- endcomment -%}
+{%- assign vip_label = 'Spark' -%}
+
+{%- if customer -%}
+  {%- if customer.tags contains 'VIP:Firestorm' -%}
+    {%- assign earn_rate_times100 = 2000 -%}{%- assign vip_label = 'Firestorm' -%}
+  {%- elsif customer.tags contains 'VIP:Inferno' -%}
+    {%- assign earn_rate_times100 = 1750 -%}{%- assign vip_label = 'Inferno' -%}
+  {%- elsif customer.tags contains 'VIP:Blaze' -%}
+    {%- assign earn_rate_times100 = 1500 -%}{%- assign vip_label = 'Blaze' -%}
+  {%- elsif customer.tags contains 'VIP:Flame' -%}
+    {%- assign earn_rate_times100 = 1250 -%}{%- assign vip_label = 'Flame' -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- comment -%}
+If caller passes subtotal_cents, use it; else default to cart subtotal.
+{%- endcomment -%}
+{%- if subtotal_cents == blank -%}
+  {%- assign subtotal_cents = cart.items_subtotal_price -%}
+{%- endif -%}
+
+{%- assign points_earned = subtotal_cents | times: earn_rate_times100 | divided_by: 10000 | floor -%}
+
+{%- if points_earned > 0 -%}
+<div class="fireball-earned-points cart__totals right">
+  You’ll earn <strong>{{ points_earned }}</strong> Fireball Points
+  {%- if customer -%} ({{ vip_label }} tier){%- endif -%}.
+</div>
+
+{%- endif -%}

@@ -411,6 +411,13 @@
                     block: block,
                     product_form_id: product_form_id
                   %}
+                {% comment %} {%- comment -%} Fireball – Bundle picker on Featured Product (home only) {%- endcomment -%}
+                {% unless template.name == 'product' %}
+                  {% if product.tags contains '7-Color-Bundles' %}
+                    {% render 'fireball-bundle-colors', section_id: section.id, product: product %}
+                  {% endif %}
+                {% endunless %} {% endcomment %}
+  
                 {%- when 'buy_buttons' -%}
                   {%- render 'buy-buttons',
                     block: block,
@@ -478,6 +485,38 @@
       </div>
       {% render 'product-media-modal', product: product, variant_images: variant_images %}
     </div>
+
+    {% comment %}Fireball - Featured Product: make image click go to product page instead of zoom (Dawn 15.4.x){% endcomment %}
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const section = document.getElementById('FeaturedProduct-{{ section.id }}') || document.querySelector('#shopify-section-{{ section.id }}');
+        if (!section) return;
+
+        const targetUrl = '{{ product.url }}';
+
+        // Intercept the zoom/modal triggers inside this Featured Product section
+        section.querySelectorAll('.product__modal-opener, .product__media-toggle').forEach(el => {
+          el.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = targetUrl;
+          }, { capture: true });
+          el.setAttribute('role', 'link');
+          el.setAttribute('aria-label', 'View product details');
+          el.style.cursor = 'pointer';
+        });
+
+        // Fallback: if a plain <img> gets the click, send to product page
+        section.querySelectorAll('media-gallery img, .product__media img, .product__media-item img').forEach(img => {
+          img.style.cursor = 'pointer';
+          img.addEventListener('click', () => { window.location.href = targetUrl; });
+        });
+
+        // Optional: remove any visible zoom icons within this section
+        section.querySelectorAll('.product__zoom, .product__zoom-button').forEach(icon => icon.remove());
+      });
+    </script>
+
   </section>
   {%- unless placeholder -%}
     </product-component>

@@ -1,0 +1,213 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "wrapper": "div#essential-loyalty-landing-page",
+  "sections": {
+    "essential-loyalty-landing-page": {
+      "type": "essential-loyalty-landing-page",
+      "settings": {
+        "heading_font_family": "",
+        "text_font_family": "",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "page_background_color": "",
+        "page_max_width": 1200,
+        "border_radius": 14,
+        "heading_font_size": 28,
+        "text_font_size": 14,
+        "heading_font_size_mobile": 24,
+        "text_font_size_mobile": 14,
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "button_hover_background_color": "#000000",
+        "button_hover_text_color": "#ffffff",
+        "button_border_color": "",
+        "button_font_size": 14,
+        "button_padding_y": 10,
+        "button_padding_x": 32,
+        "input_background_color": "#ffffff",
+        "input_text_color": "#000000",
+        "input_border_color": "#000000",
+        "input_font_size": 14,
+        "input_padding_x": 6,
+        "input_padding_y": 20,
+        "card_background_color": "#ffffff",
+        "card_heading_color": "#000000",
+        "card_text_color": "#000000",
+        "card_icon_color": "#000000",
+        "card_border_color": "#c6c6c6",
+        "card_heading_font_size": 16,
+        "card_text_font_size": 14,
+        "card_image_height": 50,
+        "table_thead_background_color": "#000000",
+        "table_thead_text_color": "#ffffff",
+        "table_tbody_text_color": "#000000",
+        "table_border_color": "#000000",
+        "modal_background_color": "#ffffff",
+        "modal_text_color": "#000000",
+        "modal_icon_color": "#000000",
+        "modal_icon_position_top": 15,
+        "modal_icon_position_right": 15,
+        "modal_heading_font_size": 22,
+        "modal_text_font_size": 14
+      }
+    },
+    "loyalty_tiers_fireball_CFXGk4": {
+      "type": "fireball-loyalty-tiers",
+      "blocks": {
+        "tier_KGKPhc": {
+          "type": "tier",
+          "settings": {
+            "name": "Spark",
+            "points_to_unlock": 0,
+            "multiplier": "1",
+            "early_access": false,
+            "birthday": true,
+            "flash_sales": false
+          }
+        },
+        "tier_fftkdB": {
+          "type": "tier",
+          "settings": {
+            "name": "Flame",
+            "points_to_unlock": 1000,
+            "multiplier": "1.25",
+            "early_access": false,
+            "birthday": true,
+            "flash_sales": false
+          }
+        },
+        "tier_FpG9VJ": {
+          "type": "tier",
+          "settings": {
+            "name": "Blaze",
+            "points_to_unlock": 2500,
+            "multiplier": "1.5",
+            "early_access": true,
+            "birthday": true,
+            "flash_sales": true
+          }
+        },
+        "tier_znHqNE": {
+          "type": "tier",
+          "settings": {
+            "name": "Inferno",
+            "points_to_unlock": 5000,
+            "multiplier": "1.75",
+            "early_access": true,
+            "birthday": true,
+            "flash_sales": true
+          }
+        },
+        "tier_rpzm74": {
+          "type": "tier",
+          "settings": {
+            "name": "Firestorm",
+            "points_to_unlock": 10000,
+            "multiplier": "2",
+            "early_access": true,
+            "birthday": true,
+            "flash_sales": true
+          }
+        }
+      },
+      "block_order": [
+        "tier_KGKPhc",
+        "tier_fftkdB",
+        "tier_FpG9VJ",
+        "tier_znHqNE",
+        "tier_rpzm74"
+      ],
+      "name": "Fireball VIP Tiers",
+      "settings": {
+        "heading": "VIP Program",
+        "subheading": "Join our VIP program and get exclusive rewards"
+      }
+    },
+    "17571272992a1960cb": {
+      "type": "apps",
+      "blocks": {
+        "essential_loyalty_landing_page_ways_to_earn_faUwFp": {
+          "type": "shopify://apps/essential-loyalty/blocks/landing-page-ways-to-earn/bb1b2244-edbc-4be2-b271-04fde65a5c2f",
+          "settings": {
+            "wte_background_color": "",
+            "wte_section_heading_color": "#000000",
+            "wte_section_text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "essential_loyalty_landing_page_ways_to_earn_faUwFp"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "17571273000cdbe147": {
+      "type": "apps",
+      "blocks": {
+        "essential_loyalty_landing_page_ways_to_redeem_pMUmxb": {
+          "type": "shopify://apps/essential-loyalty/blocks/landing-page-ways-to-redeem/bb1b2244-edbc-4be2-b271-04fde65a5c2f",
+          "settings": {
+            "wtr_background_color": "",
+            "wtr_section_heading_color": "#000000",
+            "wtr_section_text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "essential_loyalty_landing_page_ways_to_redeem_pMUmxb"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1757127409af3e953e": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1757127375445b8123": {
+      "type": "apps",
+      "blocks": {
+        "essential_loyalty_landing_page_faq_7L8WQb": {
+          "type": "shopify://apps/essential-loyalty/blocks/landing-page-faq/bb1b2244-edbc-4be2-b271-04fde65a5c2f",
+          "settings": {
+            "faq_background_color": "",
+            "faq_section_heading_color": "#000000",
+            "faq_section_text_color": "#000000",
+            "faq_section_accordion_text_color": "#000000",
+            "faq_section_question_background_color": "",
+            "faq_section_accordion_border_color": "#000000",
+            "faq_section_question_font_size": 16,
+            "faq_section_answer_font_size": 14,
+            "faq_section_question_font_size_mobile": 16,
+            "faq_section_answer_font_size_mobile": 14
+          }
+        }
+      },
+      "block_order": [
+        "essential_loyalty_landing_page_faq_7L8WQb"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "essential-loyalty-landing-page",
+    "loyalty_tiers_fireball_CFXGk4",
+    "17571272992a1960cb",
+    "17571273000cdbe147",
+    "1757127409af3e953e",
+    "1757127375445b8123"
+  ]
+}

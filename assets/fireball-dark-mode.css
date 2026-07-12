@@ -1,0 +1,702 @@
+
+/* =============================== */
+/*  Fireball - Dark Mode Styles   */
+/*    For Shopify Dawn Theme      */
+/* =============================== */
+
+/* Root colors */
+html.dark, body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Global layout containers and backgrounds */
+html.dark,
+html.dark body,
+html.dark .main-page-content,
+html.dark .content-for-layout,
+html.dark .shopify-section,
+html.dark .grid,
+html.dark .page-width,
+html.dark .template-collection,
+html.dark .template-index,
+html.dark .template-product,
+html.dark .template-cart,
+html.dark .template-404,
+html.dark .template-search,
+html.dark .template-page,
+html.dark .background-secondary,
+html.dark .background-primary,
+html.dark .gradient,
+html.dark [class*="template-"],
+html.dark [class*="background"],
+html.dark [class*="section"] {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
+/* Remove any background-image gradients */
+html.dark .gradient::before,
+html.dark .gradient::after {
+  background-image: none !important;
+}
+
+/* Typography */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6,
+html.dark .title,
+html.dark .subtitle,
+html.dark .section-header__title,
+html.dark .card__heading {
+  color: #e0e0e0 !important;
+}
+
+/* Links */
+html.dark a {
+  color: #ffffff !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+html.dark a:hover {
+  color: #ff4d4d !important;
+  text-decoration: underline;
+}
+
+/* Buttons */
+html.dark button,
+html.dark .button,
+html.dark .button--primary,
+html.dark .button--secondary {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+/* Form elements */
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-color: #444;
+}
+
+/* Cards, products, collections */
+html.dark .card,
+html.dark .collection-card,
+html.dark .collection-list__item,
+html.dark .product-card,
+html.dark .product-card__content,
+html.dark .card-wrapper,
+html.dark .media,
+html.dark .product-grid,
+html.dark .featured-collection,
+html.dark .grid__item {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+/* Cart drawer */
+html.dark .cart-items,
+html.dark .cart__footer,
+html.dark .cart__empty-text,
+html.dark .cart__note,
+html.dark .cart__checkout-button,
+html.dark .drawer,
+html.dark .drawer__inner {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+/* Modals */
+html.dark .modal__content,
+html.dark .modal__backdrop {
+  background-color: rgba(18, 18, 18, 0.95) !important;
+  color: #ffffff !important;
+}
+
+/* Header, footer, announcement bar */
+html.dark .announcement-bar,
+html.dark .site-header,
+html.dark .footer,
+html.dark .footer__content-top,
+html.dark .footer__content-bottom {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+/* Dividers */
+html.dark hr,
+html.dark .divider,
+html.dark .horizontal-divider {
+  border-color: #333 !important;
+}
+
+/* Misc visuals */
+html.dark .icon,
+html.dark svg,
+html.dark .price,
+html.dark .badge {
+  color: #e0e0e0 !important;
+  fill: #e0e0e0 !important;
+}
+
+/* Blog, newsletter, text content */
+html.dark .newsletter-form__field-wrapper,
+html.dark .article-card,
+html.dark .blog-articles,
+html.dark .rich-text {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
+/* Dark mode toggle button cleanup */
+.header__icon.dark-mode-toggle {
+  background: none !important;
+  border: none !important;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  margin-left: 1rem;
+}
+
+.header__icon.dark-mode-toggle svg {
+  background: none !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  border-radius: 0;
+  width: 24px;
+  height: 24px;
+}
+
+html.dark .quantity__input {
+  color: #ffffff !important;
+  background-color: #1e1e1e !important;
+}
+
+/* Fix for filter dropdowns */
+html.dark .facets__form select,
+html.dark .facets__form summary,
+html.dark .facets__form .disclosure__button {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+  border-color: #444 !important;
+}
+
+html.dark .facets__form select option {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+//3
+
+/* 1. Make popup background black, text white */
+html.dark .disclosure__content {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
+}
+
+/* 2. Make 'The highest price is...' white */
+html.dark .facets__selected {
+  color: #ffffff !important;
+}
+
+/* 3. Style price input wrappers (From/To blocks) with white background */
+html.dark .facets__price .field {
+  background-color: #ffffff !important;
+  border: 1px solid #444 !important;
+}
+
+/* 4. Input boxes: black text */
+html.dark .facets__price .field__input {
+  background-color: transparent !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+/* 5. Dollar signs inside inputs: white */
+html.dark .facets__price .field-currency {
+  color: #ffffff !important;
+}
+
+/* 🔲 Force background black on all filter popup containers */
+html.dark .disclosure__content,
+html.dark .facets__disclosure,
+html.dark .facets__form,
+html.dark .facets__display,
+html.dark .facets-container,
+html.dark .facets__wrapper {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+//4 
+
+/* 🏷 Highest price label white */
+html.dark .facets__selected {
+  color: #ffffff !important;
+}
+
+/* 🧱 Price input blocks (white cards) */
+html.dark .facets__price .field {
+  background-color: #ffffff !important;
+  border: 1px solid #666 !important;
+}
+
+/* 🔤 Black input text inside white blocks */
+html.dark .facets__price .field__input {
+  background-color: transparent !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+/* 💲 Dollar signs white */
+html.dark .facets__price .field-currency {
+  color: #ffffff !important;
+}
+
+//5
+/* 💥 Force background black on every price popup container layer */
+html.dark .facets__disclosure,
+html.dark .facets__display,
+html.dark .disclosure__content,
+html.dark .facets__form,
+html.dark .facets__wrapper,
+html.dark .facets__header,
+html.dark fieldset.facets-wrap {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+//6
+/* Kill white box at top of filter popup */
+html.dark .facets__disclosure .disclosure__content,
+html.dark .facets__disclosure .facets__header,
+html.dark .facets__disclosure .facets__display,
+html.dark .facets__disclosure fieldset,
+html.dark .facets__disclosure legend,
+html.dark .facets__disclosure .facets-wrap {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+ //7
+/* 🔳 Fix the white block at the top of the Price filter popup */
+html.dark .facets__header {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+//8
+/* 🛠 Fix the persistent white header inside price filter dropdown */
+html.dark #Facet-2-template--25019408023837__product-grid .facets__header {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+//9
+html.dark .facets__display .facets__header {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+//10
+/* 💥 Brutally force dark mode styling on the price filter dropdown top block */
+html.dark .facets__disclosure[open] > .facets__display > .facets__header,
+html.dark .facets__display .facets__header,
+html.dark .facets__disclosure[open] .facets__header {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 1rem;
+}
+
+//11
+html.dark .facets__display > .facets__header {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+html.dark .facets__display > .facets__header * {
+  color: #fff !important;
+}
+
+//12
+html.dark .facets__header {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* 🔧 Fix header dropdown menu backgrounds and text in dark mode */
+html.dark .header__submenu,
+html.dark .menu-drawer__submenu,
+html.dark .header__menu-item .submenu,
+html.dark .header__dropdown,
+html.dark .popover {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
+  z-index: 1001;
+}
+
+/* ✏️ Ensure dropdown menu links are visible */
+html.dark .header__submenu a,
+html.dark .menu-drawer__submenu a,
+html.dark .header__submenu li,
+html.dark .menu-drawer__submenu li {
+  color: #ffffff !important;
+}
+
+/* 🔲 Optional: Add subtle hover effect */
+html.dark .header__submenu a:hover,
+html.dark .menu-drawer__submenu a:hover {
+  background-color: #2a2a2a !important;
+}
+
+/* 🧩 Fix for Shopify Dawn dropdown menus in dark mode */
+
+html.dark .header__submenu,
+html.dark .header__submenu .list-menu,
+html.dark .header__submenu ul,
+html.dark .header__submenu li {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-color: #333 !important;
+}
+
+/* 🔤 Ensure links inside dropdowns are visible */
+html.dark .header__submenu a {
+  color: #ffffff !important;
+}
+
+/* 🔘 Dropdown hover states */
+html.dark .header__submenu a:hover {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+/* 🔥 FINAL FIX: Header dropdowns (desktop nav) in dark mode */
+html.dark details[open] > .header__submenu,
+html.dark .header__submenu,
+html.dark .header__submenu.list-menu,
+html.dark .header__submenu.list-menu--disclosure,
+html.dark .header__submenu ul,
+html.dark .header__submenu li {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
+  z-index: 1001 !important;
+}
+
+/* Links inside dropdowns */
+html.dark .header__submenu a {
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+/* Hover state */
+html.dark .header__submenu a:hover {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+/* 🌐 Fix language & currency dropdowns in header dark mode */
+
+html.dark .localization-form,
+html.dark .disclosure,
+html.dark .disclosure__button,
+html.dark .disclosure__list,
+html.dark .localization-selector,
+html.dark .localization-selector select {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-color: #333 !important;
+}
+
+/* Fix list of language/currency options */
+html.dark .disclosure__list,
+html.dark .disclosure__item {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+/* Make the actual <option> text visible */
+html.dark select option {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+/* Optional: Add hover styling */
+html.dark .disclosure__item:hover {
+  background-color: #2a2a2a !important;
+}
+
+/* 🛠 FINAL patch: force submenu dropdowns to be visible in dark mode */
+html.dark details[open] > .header__submenu {
+  display: block !important;
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  padding: 0.5rem 0 !important;
+  border: 1px solid #333 !important;
+  z-index: 1001 !important;
+  min-width: 200px; /* force dropdown to have width */
+}
+
+/* Force visibility of menu links inside dropdown */
+html.dark .header__submenu a,
+html.dark .header__submenu li {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  display: block !important;
+  padding: 0.5rem 1rem;
+}
+
+/* Optional: hover effect */
+html.dark .header__submenu a:hover {
+  background-color: #2a2a2a !important;
+}
+
+/* 🔧 Fix header dropdown visibility in dark mode */
+html.dark .header__menu-item > details[open] > .header__submenu,
+html.dark .header__submenu,
+html.dark .header__submenu .list-menu,
+html.dark .header__submenu ul,
+html.dark .header__submenu li {
+  display: block !important;
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  padding: 0.5rem 0 !important;
+  z-index: 1001 !important;
+  min-width: 200px;
+  border: 1px solid #333 !important;
+}
+
+/* ✅ Fix dropdown links */
+html.dark .header__submenu a,
+html.dark .header__submenu .list-menu__item {
+  color: #ffffff !important;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+/* 🖱️ Hover effect */
+html.dark .header__submenu a:hover {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+/* 🧭 Fix active menu item (like Home) */
+html.dark .header__menu-item .link--text.active,
+html.dark .header__menu-item .link--text[aria-current="page"] {
+  color: #ffffff !important;
+  border-bottom: 2px solid #ffffff !important;
+}
+/* 🛠 FINAL dropdown patch for header menus (Dawn 15.4) dark mode */
+html.dark .header__submenu,
+html.dark .header__submenu .list-menu,
+html.dark .header__submenu li,
+html.dark .header__submenu a {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-color: #333 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 🖱️ Force dropdown links to display */
+html.dark .header__submenu a {
+  display: block !important;
+  padding: 0.75rem 1rem !important;
+  font-weight: 500;
+  background-color: transparent !important;
+}
+
+/* 🔘 Highlight on hover */
+html.dark .header__submenu a:hover {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+/* ✅ Prevent theme from hiding with transform/opacity */
+html.dark .header__submenu,
+html.dark .header__submenu.list-menu--disclosure {
+  transform: none !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+/* 🪄 Optional: Add a subtle border and shadow to submenu panel */
+html.dark .header__submenu {
+  border: 1px solid #333 !important;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+/* 🧨 Absolute final override for header dropdowns in dark mode */
+html.dark details[open] > .header__submenu {
+  display: block !important;
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  transition: none !important;
+  pointer-events: auto !important;
+  border: 1px solid #333 !important;
+  z-index: 9999 !important;
+  min-width: 220px;
+}
+
+html.dark details[open] > .header__submenu a,
+html.dark details[open] > .header__submenu li {
+  display: block !important;
+  color: #ffffff !important;
+  background-color: transparent !important;
+  padding: 0.75rem 1rem !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+html.dark details[open] > .header__submenu a:hover {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+}
+/* ================================================= */
+/* 🔥 FINAL WORKING FIX FOR HEADER & MOBILE DROPDOWNS */
+/* ================================================= */
+
+/* 💻 Desktop dropdown: force show & style */
+html.dark details[open] > .header__submenu {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
+  z-index: 10000 !important;
+  padding: 0.25rem 0 !important;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+html.dark details[open] > .header__submenu a,
+html.dark details[open] > .header__submenu li {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  display: block !important;
+  padding: 0.75rem 1rem !important;
+  font-weight: 500 !important;
+}
+
+/* 🖱️ Hover */
+html.dark .header__submenu a:hover {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+/* 📱 Mobile nav drawer */
+html.dark .menu-drawer,
+html.dark .menu-drawer__inner,
+html.dark .menu-drawer__menu,
+html.dark .menu-drawer__menu ul,
+html.dark .menu-drawer__menu li {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+html.dark .men
+/* =============================== */
+/* 🛠 FINAL PATCH FOR DAWN DROPDOWN MENUS DARK MODE */
+/* =============================== */
+
+/* DESKTOP HEADER DROPDOWNS */
+html.dark details[open] > .header__submenu {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
+  z-index: 9999 !important;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Submenu links inside dropdowns */
+html.dark .header__submenu a,
+html.dark .header__submenu li {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  display: block;
+}
+
+html.dark .header__submenu a:hover {
+  background-color: #2a2a2a !important;
+}
+
+/* LANGUAGE + CURRENCY DROPDOWNS */
+html.dark .disclosure__list,
+html.dark .disclosure__item,
+html.dark .disclosure__button {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-color: #333 !important;
+}
+
+html.dark .disclosure__list {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  z-index: 9999 !important;
+}
+
+html.dark .disclosure__item:hover {
+  background-color: #2a2a2a !important;
+}
+
+/* MOBILE NAV: force visible in drawer */
+html.dark .menu-drawer,
+html.dark .menu-drawer__inner,
+html.dark .menu-drawer__menu,
+html.dark .menu-drawer__menu ul,
+html.dark .menu-drawer__menu li {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+html.dark .menu-drawer__menu a {
+  color: #ffffff !important;
+  padding: 1rem;
+  font-weight: 500;
+  display: block;
+}
+
+html.dark .menu-drawer__menu a:hover {
+  background-color: #2a2a2a !important;
+}

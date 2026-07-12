@@ -5,7 +5,7 @@
   - block: {Object} passing the block information.
   - product_form_id: {String} product form id.
   - section_id: {String} id of section to which this snippet belongs.
-  - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
+  - show_pickup_availability: {Boolean} for the pickup availability.
 
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
@@ -27,7 +27,7 @@
     <product-form
       class="product-form"
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
-      data-section-id="{{ section.id }}"
+      data-section-id="{{ section_id }}"
     >
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <span class="svg-wrapper">
@@ -59,6 +59,17 @@
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
+
+        {% comment %} {%- comment -%}Fireball - Bundle Color Pickers only for 7-Color-Bundles{%- endcomment -%}
+        {% if product.tags contains '7-Color-Bundles' %}
+          {% render 'fireball-bundle-colors', section_id: section_id, product: product %}
+        {% endif %} {% endcomment %}
+        {%- comment -%} Fireball – Bundle Color Pickers (inside the real product form) {%- endcomment -%}
+        {% if product.tags contains '7-Color-Bundles' %}
+          {% render 'fireball-bundle-colors', section_id: section_id, product: product %}
+        {% endif %}
+
+
 
         <div class="product-form__buttons">
           {%- liquid
@@ -129,8 +140,7 @@
       data-root-url="{{ routes.root_url }}"
       data-variant-id="{{ product.selected_or_first_available_variant.id }}"
       data-has-only-default-variant="{{ product.has_only_default_variant }}"
-      data-product-page-color-scheme="gradient color-{{ section.settings.color_scheme }}"
-    >
+      data-product-page-color-scheme="gradient color-{{ section.settings.color_scheme }}">
       <template>
         <pickup-availability-preview class="pickup-availability-preview">
           <span class="svg-wrapper">

@@ -1,61 +1,906 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "multicolumn_eJD94Y": {
+      "type": "multicolumn",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "column_XTmjAV": {
+          "type": "column",
+          "name": "Fireball 3D",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "image": "shopify://shop_images/F3D_Collection_1.1.png",
+            "title": "",
+            "text": "",
+            "link_label": "Fireball 3D",
+            "link": "shopify://pages/fireball3d"
           }
         },
-        "button": {
-          "type": "buttons",
+        "column_FhJkgM": {
+          "type": "column",
+          "name": "Fireball Gear",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "image": "shopify://shop_images/Fireball_Gear_Colleciton_1.1_A.png",
+            "title": "",
+            "text": "",
+            "link_label": "Fireball Gear",
+            "link": "shopify://pages/fireballgear"
+          }
+        },
+        "column_gwQD8G": {
+          "type": "column",
+          "name": "Fireball Fabrication",
+          "settings": {
+            "image": "shopify://shop_images/Fireball_Fabrication_Collection_1.1.png",
+            "title": "",
+            "text": "",
+            "link_label": "Fireball Fabrication",
+            "link": "shopify://pages/fireballfabrication"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "column_XTmjAV",
+        "column_FhJkgM",
+        "column_gwQD8G"
       ],
+      "disabled": true,
+      "name": "Multicolumn - Brands",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "title": "Shop Brands",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 24,
+        "padding_bottom": 12
+      }
+    },
+    "multicolumn_RWaNUr": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_thA7cX": {
+          "type": "column",
+          "name": "Fireball 3D",
+          "settings": {
+            "image": "shopify://shop_images/F3D_Collection_1.1.png",
+            "title": "",
+            "text": "",
+            "link_label": "Fireball 3D",
+            "link": "shopify://pages/fireball3d"
+          }
+        },
+        "column_GJjGRM": {
+          "type": "column",
+          "name": "Fireball Gear",
+          "settings": {
+            "image": "shopify://shop_images/Fireball_Gear_Colleciton_1.1_A.png",
+            "title": "",
+            "text": "",
+            "link_label": "Fireball Gear",
+            "link": "shopify://pages/fireballgear"
+          }
+        },
+        "column_DXpLzM": {
+          "type": "column",
+          "name": "Fireball Fabrication",
+          "settings": {
+            "image": "shopify://shop_images/Fireball_Fabrication_Collection_1.1.png",
+            "title": "",
+            "text": "",
+            "link_label": "Fireball Fabrication",
+            "link": "shopify://pages/fireballfabrication"
+          }
+        }
+      },
+      "block_order": [
+        "column_thA7cX",
+        "column_GJjGRM",
+        "column_DXpLzM"
+      ],
+      "name": "Multicolumn - Shop Brands",
+      "settings": {
+        "title": "Shop Brands",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 24,
+        "padding_bottom": 12
+      }
+    },
+    "multicolumn_mPp9hy": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_iPbzMb": {
+          "type": "column",
+          "name": "Men's Clothing",
+          "settings": {
+            "image": "shopify://shop_images/Fireball_Fabrication_-_Welding_Torch_Craft_-_B.png",
+            "title": "",
+            "text": "",
+            "link_label": "Men's Clothing",
+            "link": "shopify://pages/mens-clothing"
+          }
+        },
+        "column_84CEa8": {
+          "type": "column",
+          "name": "Women's Clothing",
+          "settings": {
+            "image": "shopify://shop_images/Train_at_Top_Speed_-_A.png",
+            "title": "",
+            "text": "",
+            "link_label": "Women's Clothing",
+            "link": "shopify://pages/womens-clothing"
+          }
+        },
+        "column_njyqYx": {
+          "type": "column",
+          "name": "Accessories",
+          "settings": {
+            "image": "shopify://shop_images/Fireball_Accessories.png",
+            "title": "",
+            "text": "",
+            "link_label": "Accessories",
+            "link": "shopify://pages/accessories"
+          }
+        }
+      },
+      "block_order": [
+        "column_iPbzMb",
+        "column_84CEa8",
+        "column_njyqYx"
+      ],
+      "name": "Multicolumn - Shop Clothing",
+      "settings": {
+        "title": "Shop Clothing & Accessories",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 24,
+        "padding_bottom": 12
+      }
+    },
+    "featured_collection_zUM7N8": {
+      "type": "featured-collection",
+      "name": "Collection - New Items",
+      "settings": {
+        "collection": "new",
+        "products_to_show": 12,
+        "title": "New Items",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_FJjdbp": {
+      "type": "featured-product",
+      "blocks": {
+        "text_Da4tch": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_MddU6q": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_z9NiFR": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_9qiVAa": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_CygKPh": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_LTVUyc": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_dPwenD": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_Da4tch",
+        "title_MddU6q",
+        "price_z9NiFR",
+        "variant_picker_9qiVAa",
+        "quantity_selector_CygKPh",
+        "buy_buttons_LTVUyc",
+        "share_dPwenD"
+      ],
+      "name": "Product - Touch-up Paint Jar & Ladle",
+      "settings": {
+        "product": "fireball-3d-small-touch-up-paint-jar-ladle-combo",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "media_position": "right",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_rrrgyx": {
+      "type": "featured-collection",
+      "name": "Collection - Beast Mode Series",
+      "settings": {
+        "collection": "beast-mode-series",
+        "products_to_show": 12,
+        "title": "Beast Mode Series",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_RNJzEA": {
+      "type": "featured-product",
+      "blocks": {
+        "text_YWNtVx": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_qdmFAx": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_jxCPWG": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_pamUHc": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_LbMgkR": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_aDximL": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_KddRGf": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_YWNtVx",
+        "title_qdmFAx",
+        "price_jxCPWG",
+        "variant_picker_pamUHc",
+        "quantity_selector_LbMgkR",
+        "buy_buttons_aDximL",
+        "share_KddRGf"
+      ],
+      "name": "Product - Paint Cones",
+      "settings": {
+        "product": "fireball-3d-adjustable-paint-cones",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_DhJDTi": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "Collection - Womens Clothing",
+      "settings": {
+        "collection": "womens-clothing",
+        "products_to_show": 12,
+        "title": "Women's Clothing",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_JW4reW": {
+      "type": "featured-product",
+      "blocks": {
+        "text_gNKUQ8": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_GdayaN": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_zCqRci": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_m9PmR8": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_3byp97": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_Ra3bhK": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_nb8dmN": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_gNKUQ8",
+        "title_GdayaN",
+        "price_zCqRci",
+        "variant_picker_m9PmR8",
+        "quantity_selector_3byp97",
+        "buy_buttons_Ra3bhK",
+        "share_nb8dmN"
+      ],
+      "name": "Product - Tig Tip Block",
+      "settings": {
+        "product": "fireball-3d-tungsten-stick-out-gauge",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "media_position": "right",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_DwUkkW": {
+      "type": "featured-collection",
+      "name": "Collection - Drinkware",
+      "settings": {
+        "collection": "drinkware",
+        "products_to_show": 8,
+        "title": "Drinkware",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_HW8HHX": {
+      "type": "featured-product",
+      "blocks": {
+        "text_PMifrn": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_YAGz4K": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_MATTaJ": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_ekd3wL": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_pURei9": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_4BDt8F": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_TWrgPA": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_PMifrn",
+        "title_YAGz4K",
+        "price_MATTaJ",
+        "variant_picker_ekd3wL",
+        "quantity_selector_pURei9",
+        "buy_buttons_4BDt8F",
+        "share_TWrgPA"
+      ],
+      "name": "Product - Women Cheetah",
+      "settings": {
+        "product": "fireball-gear-beast-mode-train-at-top-speed-womens-slim-fit-fitness-t-shirt",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_FV7YQR": {
+      "type": "featured-collection",
+      "name": "Collection - Tech Accessories",
+      "settings": {
+        "collection": "phone-accessories",
+        "products_to_show": 8,
+        "title": "Tech Accessories",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_zWGYkA": {
+      "type": "featured-product",
+      "blocks": {
+        "text_fLT3pt": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_eLgK3f": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_kPRizg": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_fqXL88": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_3j8EnP": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_FczbB7": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_a38AD6": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_fLT3pt",
+        "title_eLgK3f",
+        "price_kPRizg",
+        "variant_picker_fqXL88",
+        "quantity_selector_3j8EnP",
+        "buy_buttons_FczbB7",
+        "share_a38AD6"
+      ],
+      "name": "Product - Beast Mode Airpod Case",
+      "settings": {
+        "product": "fireball-gear-beast-mode-personalized-gym-barcode-airpods-case-cover-black-red",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_VwDznJ": {
+      "type": "featured-collection",
+      "name": "Collection - Fitness",
+      "settings": {
+        "collection": "fitness-clothing",
+        "products_to_show": 12,
+        "title": "Fitness Clothing",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_BcjRYr": {
+      "type": "featured-product",
+      "blocks": {
+        "text_aRChtq": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_LMxbby": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_gpAKzh": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_mMVm6w": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_UKatVe": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_eQHf4p": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_cCtKJL": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_aRChtq",
+        "title_LMxbby",
+        "price_gpAKzh",
+        "variant_picker_mMVm6w",
+        "quantity_selector_UKatVe",
+        "buy_buttons_eQHf4p",
+        "share_cCtKJL"
+      ],
+      "name": "Product - He-Man",
+      "settings": {
+        "product": "fireball-gear-i-have-the-power-aka-tv-remote-humor-t-shirt",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_PqqzCH": {
+      "type": "featured-collection",
+      "name": "Collection - Hats",
+      "settings": {
+        "collection": "hats",
+        "products_to_show": 12,
+        "title": "Hats",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_4h8iNq": {
+      "type": "featured-product",
+      "blocks": {
+        "text_x9GbjH": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_CHtPNL": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_RQcFcQ": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_rxLtwN": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_LgkKFk": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_LgAiGy": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_khfPFq": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_x9GbjH",
+        "title_CHtPNL",
+        "price_RQcFcQ",
+        "variant_picker_rxLtwN",
+        "quantity_selector_LgkKFk",
+        "buy_buttons_LgAiGy",
+        "share_khfPFq"
+      ],
+      "name": "Product - Grinder",
+      "settings": {
+        "product": "grinder-the-welders-delete-key",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "featured_collection": {
       "type": "featured-collection",
+      "name": "Collection - LED Signs",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
+        "collection": "fireball-3d-led-signs",
+        "products_to_show": 8,
+        "title": "LED Signs",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -63,13 +908,333 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_9EmhVJ": {
+      "type": "featured-product",
+      "blocks": {
+        "text_37QPyH": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_BaEzen": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_PGnxKA": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_mNGK3J": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_8FK9yy": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_WGKAFe": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_gnMj7g": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_37QPyH",
+        "title_BaEzen",
+        "price_PGnxKA",
+        "variant_picker_mNGK3J",
+        "quantity_selector_8FK9yy",
+        "buy_buttons_WGKAFe",
+        "share_gnMj7g"
+      ],
+      "name": "Product - Workout",
+      "settings": {
+        "product": "fireball-gear-when-in-doubt-workout-jersey-fitness-tank-top",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_eMhM4d": {
+      "type": "featured-collection",
+      "name": "Collection - Gaming",
+      "settings": {
+        "collection": "gaming-clothing",
+        "products_to_show": 8,
+        "title": "Gaming Clothing",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_K6pjL7": {
+      "type": "featured-product",
+      "blocks": {
+        "text_jPH7zE": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_xwHB4L": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_Mi83cg": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_ACBwAf": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_Cq9dVT": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_3MecqP": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_FqB89H": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_jPH7zE",
+        "title_xwHB4L",
+        "price_Mi83cg",
+        "variant_picker_ACBwAf",
+        "quantity_selector_Cq9dVT",
+        "buy_buttons_3MecqP",
+        "share_FqB89H"
+      ],
+      "name": "Product - Cheetah Kickboxing Hoodie",
+      "settings": {
+        "product": "fireball-gear-beast-mode-cheetah-kickboxing-train-at-top-speed-lightweight-hoodie",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_VPXNx4": {
+      "type": "featured-collection",
+      "name": "Collection - Painting Accessories",
+      "settings": {
+        "collection": "fireball-3d-painting-accessories",
+        "products_to_show": 8,
+        "title": "Painting Accessories",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_tV6QpN": {
+      "type": "featured-product",
+      "blocks": {
+        "text_qYyey8": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_JVzQKd": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_BNLGdx": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_Kc66kL": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_pMfzFh": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_fCC4jf": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_EFzxhy": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_qYyey8",
+        "title_JVzQKd",
+        "price_BNLGdx",
+        "variant_picker_Kc66kL",
+        "quantity_selector_pMfzFh",
+        "buy_buttons_fCC4jf",
+        "share_EFzxhy"
+      ],
+      "name": "Product - Women Leggings",
+      "settings": {
+        "product": "fireball-gear-fireball-3d-womens-leggings-red",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_djDJti": {
+      "type": "featured-collection",
+      "name": "Collection - Supplements",
+      "settings": {
+        "collection": "supplements",
+        "products_to_show": 4,
+        "title": "Fireball Fitness Supplements",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "multicolumn_eJD94Y",
+    "multicolumn_RWaNUr",
+    "multicolumn_mPp9hy",
+    "featured_collection_zUM7N8",
+    "featured_product_FJjdbp",
+    "featured_collection_rrrgyx",
+    "featured_product_RNJzEA",
+    "featured_collection_DhJDTi",
+    "featured_product_JW4reW",
+    "featured_collection_DwUkkW",
+    "featured_product_HW8HHX",
+    "featured_collection_FV7YQR",
+    "featured_product_zWGYkA",
+    "featured_collection_VwDznJ",
+    "featured_product_BcjRYr",
+    "featured_collection_PqqzCH",
+    "featured_product_4h8iNq",
+    "featured_collection",
+    "featured_product_9EmhVJ",
+    "featured_collection_eMhM4d",
+    "featured_product_K6pjL7",
+    "featured_collection_VPXNx4",
+    "featured_product_tV6QpN",
+    "featured_collection_djDJti"
   ]
 }

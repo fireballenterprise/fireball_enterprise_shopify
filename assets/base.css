@@ -3610,3 +3610,9 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+.fireball-earned-points {
+  font-size: var(--font-body-scale);
+  font-weight: var(--font-heading-weight);
+  color: #c61a28;
+}

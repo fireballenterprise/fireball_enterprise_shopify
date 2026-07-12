@@ -142,6 +142,27 @@
                   {{- 'products.product.on_sale' | t -}}
                 </span>
               {%- endif -%}
+
+              {% comment %}Fireball - Custom Product Badges{% endcomment %}
+              {% comment %}Fireball - New Badge{% endcomment %}
+              {%- if card_product.tags contains 'New' -%}
+                <span
+                  id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+                  class="badge badge--bottom-left badge--new"
+                >
+                  New
+                </span>
+              {%- endif -%}
+
+              {% comment %}Fireball - Coming Soon Badge{% endcomment %}
+              {%- if card_product.tags contains 'Coming Soon' -%}
+                <span
+                  id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+                  class="badge badge--bottom-left badge--coming--soon"
+                >
+                  Coming Soon...
+                </span>
+              {%- endif -%}
             </div>
           </div>
         </div>
@@ -567,6 +588,7 @@
               </span>
             {%- endif -%}
           </div>
+
         </div>
       </div>
     </div>

@@ -1,0 +1,278 @@
+{% comment %}Fireball - Bundle Color Pickers (Dawn 15.4) - requires product tag "7-Color-Bundles"{% endcomment %}
+{% assign fireball_colors = "Red|Blue|Black|White|Green|Yellow|Orange" | split: "|" %}
+
+<div id="FireballBundleColors-{{ section_id }}" class="fireball-bundle-colors hidden" data-max="4">
+  <!-- Fireball - Provide product JSON so JS can always read variants reliably -->
+  <script type="application/json" id="FireballProductData-{{ section_id }}">{{ product | json }}</script>
+
+  <fieldset class="product-form__input">
+    <legend class="form__label">Choose a color for each jar in your bundle.</legend>
+
+    {% for i in (1..4) %}
+      <div class="fireball-bundle-row" data-index="{{ i }}">
+        <label class="form__label" for="BundleColor{{ i }}-{{ section_id }}">Select Color #{{ i }}</label>
+
+        <div class="select">
+          <select
+            class="select__select"
+            id="BundleColor{{ i }}-{{ section_id }}"
+            name="properties[Select Color #{{ i }}]"
+            autocomplete="off"
+          >
+            <option value="" selected>Please select</option>
+            {% for c in fireball_colors %}
+              <option value="{{ c }}">{{ c }}</option>
+            {% endfor %}
+          </select>
+          <span class="icon-caret">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
+        </div>
+      </div>
+    {% endfor %}
+  </fieldset>
+</div>
+
+<style>
+  /* Fireball - keep it native Dawn */
+  #FireballBundleColors-{{ section_id }}.hidden { display: none; }
+
+  /* spacing to match Dawn fields */
+  #FireballBundleColors-{{ section_id }} .fireball-bundle-row { 
+    margin: 0.5rem 0 1rem; 
+  }
+  #FireballBundleColors-{{ section_id }} .form__label { 
+    margin-bottom: .25rem; 
+  }
+
+  /* prevent select from getting squashed in grid/containers */
+  #FireballBundleColors-{{ section_id }} .select { 
+    width: 100%; 
+  }
+  #FireballBundleColors-{{ section_id }} .select__select { 
+    width: 100%; 
+    min-width: 0; 
+  }
+</style>
+
+<script>
+/* Fireball – PDP + Featured Product (Dawn 15.4.x)
+   - Looks for controls in the whole section (not only inside the form)
+   - Uses e.detail.variant from Dawn's `variant:change` for reliable 2/4 detection
+   - Falls back to product JSON and currently selected UI controls
+   - Blocks Add to cart + dynamic checkout until all visible color selects are chosen
+*/
+(function () {
+  const sectionId = "{{ section_id }}";
+  const wrapper = document.getElementById(`FireballBundleColors-${sectionId}`);
+  if (!wrapper) return;
+
+  // SECTION ROOT (has id="ProductInfo-{{ section.id }}" in Featured Product)
+  const sectionRoot =
+    document.getElementById(`ProductInfo-${sectionId}`) ||
+    document.querySelector(`[data-section="${sectionId}"]`) ||
+    wrapper.closest('[data-section]') ||
+    document;
+
+  // The real product form (used for submit + dynamic checkout blocking)
+  const pf = document.querySelector(`product-form[data-section-id="${sectionId}"]`);
+  const form = pf ? pf.querySelector('form[action*="/cart/add"]') : wrapper.closest('form[action*="/cart/add"]');
+  if (!form) return;
+  try { form.removeAttribute('novalidate'); } catch (e) {}
+
+  // ---- Product JSON (best-effort) ----
+  function getProductData() {
+    try {
+      const el = document.getElementById(`FireballProductData-${sectionId}`);
+      const data = el ? JSON.parse(el.textContent) : null;
+      return (data && typeof data === 'object') ? data : null;
+    } catch { return null; }
+  }
+  const productData = getProductData();
+
+  // Cache the last variant from Dawn's events (works great on homepage)
+  let lastVariantFromEvent = null;
+
+  function currentVariant() {
+    if (lastVariantFromEvent) return lastVariantFromEvent;
+    const idInput = form.querySelector('input[name="id"]');
+    const vid = idInput ? idInput.value : null;
+    if (!productData || !Array.isArray(productData.variants) || !vid) return null;
+    try {
+      return productData.variants.find && productData.variants.find(v => String(v.id) === String(vid)) || null;
+    } catch { return null; }
+  }
+
+  // ---- Matchers for "2 Pack"/"4 Pack" (lenient but explicit) ----
+  const RX2 = /\b(2\s*[- ]?pack|2\s*pk|set\s*of\s*2|bundle\s*(of\s*)?2|x\s*2|\(2\)|\btwo\b|\b2\b)\b/i;
+  const RX4 = /\b(4\s*[- ]?pack|4\s*pk|set\s*of\s*4|bundle\s*(of\s*)?4|x\s*4|\(4\)|\bfour\b|\b4\b)\b/i;
+  const PACKISH_LABEL = /(pack|size|count|bundle|set|quantity|qty)/i;
+
+  function matchPack(text) {
+    if (!text) return 0;
+    if (RX4.test(text)) return 4;
+    if (RX2.test(text)) return 2;
+    return 0;
+  }
+
+  // ---- Read from e.detail.variant (title/options) ----
+  function packFromVariantObject(v) {
+    if (!v) return 0;
+    const parts = [];
+    if (v.title) parts.push(v.title);
+    if (Array.isArray(v.options)) parts.push(...v.options);
+    return matchPack(parts.join(' | '));
+  }
+
+  // ---- Read from the UI controls anywhere in the section (not just inside <form>) ----
+  function packFromSelectedControlsInSection() {
+    const bits = [];
+
+    // Checked radios in this section
+    sectionRoot.querySelectorAll('input[type="radio"][name^="options"]:checked').forEach(inp => {
+      const v = inp.value || '';
+      const lab = inp.id ? (sectionRoot.querySelector(`label[for="${inp.id}"]`)?.innerText || '') : '';
+      bits.push(v, lab);
+    });
+
+    // Selected options in dropdowns
+    sectionRoot.querySelectorAll('select[name^="options"]').forEach(sel => {
+      const opt = sel.options[sel.selectedIndex];
+      if (opt) bits.push(opt.text || opt.value || '');
+      // also consider the select's label if it implies pack/count
+      const labelEl = sel.id ? sectionRoot.querySelector(`label[for="${sel.id}"]`) : null;
+      const lbl = (labelEl?.innerText || sel.getAttribute('aria-label') || '').trim();
+      if (PACKISH_LABEL.test(lbl)) bits.push(lbl);
+    });
+
+    // Fieldset legends & checked pill labels
+    sectionRoot.querySelectorAll('fieldset, .product-form__input, .variant-picker').forEach(fs => {
+      const leg = fs.querySelector('legend'); if (leg) bits.push(leg.innerText);
+      fs.querySelectorAll('input[type="radio"]:checked + label, .swatch-input__label--variant').forEach(l => bits.push(l.innerText));
+    });
+
+    return matchPack(bits.join(' | '));
+  }
+
+  // ---- Decide pack count (0/2/4) ----
+  function calcPackCount() {
+    // A) Most reliable on homepage: last variant from event
+    const a = packFromVariantObject(lastVariantFromEvent);
+    if (a) return a;
+
+    // B) Selected controls anywhere in the section
+    const b = packFromSelectedControlsInSection();
+    if (b) return b;
+
+    // C) Product JSON current variant (PDP usually OK)
+    const c = packFromVariantObject(currentVariant());
+    if (c) return c;
+
+    // Otherwise nothing detected
+    return 0;
+  }
+
+  // ---- UI & enforcement ----
+  function selectionsComplete() {
+    if (wrapper.classList.contains('hidden')) return true;
+    const rows = wrapper.querySelectorAll('.fireball-bundle-row');
+    for (const row of rows) {
+      if (row.style.display === 'none') continue;
+      const sel = row.querySelector('select');
+      if (!sel.value) return false;
+    }
+    return true;
+  }
+
+  function setButtonsEnabled(enabled) {
+    const submitBtn = form.querySelector('[type="submit"][name="add"]');
+    if (submitBtn) submitBtn.disabled = !enabled;
+    const payContainer = form.querySelector('.shopify-payment-button');
+    if (payContainer) {
+      payContainer.style.pointerEvents = enabled ? '' : 'none';
+      payContainer.style.opacity = enabled ? '' : '0.5';
+      const innerBtn = payContainer.querySelector('button');
+      if (innerBtn) innerBtn.disabled = !enabled;
+    }
+  }
+
+  function showRows(count) {
+    const rows = wrapper.querySelectorAll('.fireball-bundle-row');
+    rows.forEach((row, idx) => {
+      const sel = row.querySelector('select');
+      if (idx + 1 <= count) {
+        row.style.display = '';
+        sel.setAttribute('required', 'required');
+      } else {
+        row.style.display = 'none';
+        sel.removeAttribute('required');
+        sel.value = '';
+      }
+    });
+    wrapper.classList.toggle('hidden', count === 0);
+    setButtonsEnabled(selectionsComplete());
+  }
+
+  function refresh() {
+    showRows(calcPackCount()); // 0/2/4
+  }
+
+  // Block normal submit
+  form.addEventListener('submit', function (ev) {
+    if (!selectionsComplete()) {
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      alert('Please choose a color for each jar in your bundle.');
+      return false;
+    }
+  });
+
+  // HARD BLOCK Add to cart + dynamic checkout (capture)
+  (function enforceButtons() {
+    function guard(e) {
+      if (!selectionsComplete()) {
+        e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+        alert('Please choose a color for each jar in your bundle.');
+        return false;
+      }
+    }
+    const atc = form.querySelector('[type="submit"][name="add"]');
+    if (atc) atc.addEventListener('click', guard, true);
+
+    function bindPaymentGuards() {
+      const payWrap = form.querySelector('.shopify-payment-button');
+      if (!payWrap) return;
+      payWrap.addEventListener('click', guard, true);
+      const unbranded = payWrap.querySelector('.shopify-payment-button__button');
+      if (unbranded) unbranded.addEventListener('click', guard, true);
+      const more = payWrap.querySelector('.shopify-payment-button__more-options');
+      if (more) more.addEventListener('click', guard, true);
+    }
+    bindPaymentGuards();
+    setTimeout(bindPaymentGuards, 400);
+    new MutationObserver(bindPaymentGuards).observe(form, { childList: true, subtree: true });
+  })();
+
+  // KEY: capture Dawn’s variant object when it changes (homepage & PDP)
+  document.addEventListener('variant:change', (e) => {
+    // Only react to events within this section
+    if (!sectionRoot.contains(e.target)) return;
+    const v = e.detail && e.detail.variant ? e.detail.variant : null;
+    if (v) lastVariantFromEvent = v;
+    refresh();
+  });
+
+  // Also refresh when anything in the section changes (covers selects/radios outside the form)
+  sectionRoot.addEventListener('change', refresh);
+
+  // Fallback: observe the variant id input for changes
+  const idInput = form.querySelector('input[name="id"]');
+  if (idInput && 'MutationObserver' in window) {
+    new MutationObserver(refresh).observe(idInput, { attributes: true, attributeFilter: ['value'] });
+  }
+
+  // Initial paint
+  refresh();
+  setTimeout(refresh, 0);
+})();
+</script>

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -539,6 +548,92 @@
       "send_on_label": "Enviar el (opcional)",
       "expanded": "Formulario del destinatario de la tarjeta de regalo expandido",
       "collapsed": "Formulario del destinatario de tarjeta de regalo contraído"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "stock": {
+        "out_of_stock_in_context_label": "Este producto no está disponible en su país/región."
+      },
+      "merchant_instruction_errors": {
+        "invalid_entrypoint_for_remote_negotiation": "La instrucción de negociación remota no se puede proporcionar a una sesión de negociación que no sea remota."
+      },
+      "remote_merchandise_only": {
+        "title": "Completa tu compra",
+        "remote_only_notice": "Estos artículos se venden y envían en otras tiendas. Consulta cada tienda para completar tu compra. Tu información se compartirá con %{shop_name}.",
+        "return_to_store_label": "Devolver a la tienda",
+        "detail_item_label": {
+          "one": "{{count}} artículo",
+          "other": "{{count}} artículos"
+        },
+        "checkout_on_shop_label": "Realizar pedido en %{shop_name}",
+        "single_shop_transition": "Te redireccionaremos a %{shop_name} para completar tu compra"
+      },
+      "thank_you": {
+        "items_fulfilled_by_store": {
+          "one": "Los artículos que has comprado provendrán de %{remote_shop_name}.",
+          "other": "Los artículos que has comprado procederán de otras tiendas."
+        },
+        "thank_you_confirmed_orders_with_email_description": {
+          "one": "Recibirás un correo electrónico de confirmación pronto.",
+          "other": "Pronto recibirás correos electrónicos de confirmación separados de cada tienda."
+        },
+        "thank_you_confirmed_orders_with_phone_description": {
+          "one": "Recibirás un mensaje de texto de confirmación pronto.",
+          "other": "Pronto recibirás mensajes de texto de confirmación separados de cada tienda."
+        },
+        "thank_you_confirmed_orders_with_email_and_phone_description": {
+          "one": "Recibirás un correo electrónico de confirmación pronto.",
+          "other": "Pronto recibirás correos electrónicos de confirmación separados de cada tienda."
+        }
+      },
+      "remote": {
+        "errors": {
+          "currency_mismatch": "La moneda de negociación remota ( {{remote_currency}} ) no coincide con la moneda principal ( {{parent_currency}} )."
+        }
+      }
+    }
+  },
+  "customer_accounts": {
+    "account_information": {
+      "verify_new_email_modal": {
+        "email_resend_button_error_banner_message": "No se pudo enviar el código de verificación"
+      }
+    },
+    "payment_methods": {
+      "generic_error": "Algo salió mal. Inténtalo de nuevo.",
+      "bank_account": {
+        "display_name": "Cuenta bancaria"
+      },
+      "payment_details": {
+        "replace_payment_method_button": "Reemplazar"
+      }
+    },
+    "subscriptions": {
+      "subscription_contracts": {
+        "title": "Utilice el método de pago para pedidos recurrentes",
+        "more_items": {
+          "one": "y {{count}} producto más",
+          "other": "y {{count}} productos más"
+        },
+        "product_count": {
+          "one": "{{count}} producto",
+          "other": "{{count}} productos"
+        },
+        "contracts_update_failed": "No se pudieron actualizar algunos contratos de suscripción",
+        "subscription_contracts_updated": "Se actualizaron {{succeeded}} de {{total}} suscripciones",
+        "product_details": "Detalles del producto",
+        "load_more": "Cargar más"
+      },
+      "updating_contracts": {
+        "one": "Actualizando {{count}} contrato de suscripción...",
+        "other": "Actualizando {{count}} contratos de suscripción..."
+      },
+      "contracts_updated": {
+        "one": "Contrato de suscripción actualizado correctamente {{count}}",
+        "other": "{{count}} contratos de suscripción actualizados correctamente"
+      },
+      "contracts_update_failed": "No se pudieron actualizar algunos contratos de suscripción"
     }
   }
 }

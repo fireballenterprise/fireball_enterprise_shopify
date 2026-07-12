@@ -1,0 +1,20 @@
+/* ================================
+   Fireball – Inbox Visibility Control
+   Hide Shopify Inbox (chat bubble) on mobile
+   Dawn 15.4.x
+   ================================ */
+
+@media (max-width: 767px) {
+  /* Common Inbox iframes/containers */
+  iframe[src*="inbox.shopify.com"],
+  iframe[src*="shopifycloud.com/inbox"],
+  iframe[id^="ShopifyInbox"],
+  #ShopifyInbox,
+  #ShopifyChat,
+  .shopify-inbox-container {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}

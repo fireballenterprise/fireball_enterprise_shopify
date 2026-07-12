@@ -85,7 +85,18 @@
           %}
         </li>
       {%- endif -%}
+      {% comment %} FIREBALL CHANGE: selected variant for strict media filter {% endcomment %}
+      {% assign fireball_selected_variant = product.selected_or_first_available_variant %}
+      {% comment %} END FIREBALL CHANGE {% endcomment %}
       {%- for media in product.media -%}
+        {% comment %} FIREBALL CHANGE: skip media that belongs to other variants {% endcomment %}
+        {% if media.attached_to_variant? %}
+          {% unless media.variant_ids contains fireball_selected_variant.id %}
+            {% continue %}
+          {% endunless %}
+        {% endif %}
+        {% comment %} END FIREBALL CHANGE {% endcomment %}
+
         {% if media_position >= limit
           or media_position >= 1
           and section.settings.hide_variants
@@ -251,7 +262,17 @@
             </button>
           </li>
         {%- endif -%}
+        {% comment %} FIREBALL CHANGE: selected variant for strict thumbnail filter {% endcomment %}
+        {% assign fireball_selected_variant = product.selected_or_first_available_variant %}
+        {% comment %} END FIREBALL CHANGE {% endcomment %}
         {%- for media in product.media -%}
+          {% comment %} FIREBALL CHANGE: skip thumbnails that belong to other variants {% endcomment %}
+          {% if media.attached_to_variant? %}
+            {% unless media.variant_ids contains fireball_selected_variant.id %}
+              {% continue %}
+            {% endunless %}
+          {% endif %}
+          {% comment %} END FIREBALL CHANGE {% endcomment %}
           {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
             {%- liquid
               capture media_index

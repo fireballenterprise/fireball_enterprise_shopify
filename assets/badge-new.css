@@ -1,0 +1,15 @@
+/* Fireball NEW badge */
+.card__badge .badge--new {
+  background: #c61a28;        /* Fireball red */
+  color: #fff;
+  border: none;
+}
+
+/* (Optional) pulse — delete if you want static */
+@keyframes newPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+.card__badge .badge--new {
+  animation: newPulse 2.4s ease-in-out infinite;
+}

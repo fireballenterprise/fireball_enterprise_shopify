@@ -1,0 +1,17 @@
+/* Fireball - Coming Soon badge */
+.card__badge .badge--coming--soon {
+  background: #374151; /* Dark gray (distinct from New’s Fireball red) */
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Fireball - Coming Soon glowing effect */
+@keyframes fireballComingSoonGlow {
+  0%, 100% { box-shadow: 0 0 0px rgba(255, 230, 0, 0); }
+  50% { box-shadow: 0 0 12px rgba(255, 230, 0, 0.7); }
+}
+.card__badge .badge--coming--soon {
+  animation: fireballComingSoonGlow 2.8s ease-in-out infinite;
+}

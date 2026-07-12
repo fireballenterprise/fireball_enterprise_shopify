@@ -1,0 +1,128 @@
+{% comment %}
+  Fireball VIP Tiers – manual section (Dawn 15.4.x)
+{% endcomment %}
+<section class="fireball-vip wrapper">
+  <div class="page-width">
+    <h2 class="fireball-vip__title">{{ section.settings.heading }}</h2>
+    {% if section.settings.subheading != blank %}
+      <p class="fireball-vip__subheading">{{ section.settings.subheading }}</p>
+    {% endif %}
+
+    {% assign tiers = section.blocks | where: 'type', 'tier' %}
+    {% if tiers.size > 0 %}
+      <div class="fireball-vip__grid">
+        {% for b in tiers %}
+          <div class="fireball-vip__card">
+            {% if b.settings.icon != blank %}
+              <img class="fireball-vip__icon" src="{{ b.settings.icon | image_url: width: 256 }}" width="64" height="64" alt="{{ b.settings.name | escape }}">
+            {% endif %}
+            <h3 class="fireball-vip__name">{{ b.settings.name }}</h3>
+            <p class="fireball-vip__unlock">
+              {% if b.settings.points_to_unlock > 0 %}
+                Earn {{ b.settings.points_to_unlock }} points
+              {% else %}
+                Free
+              {% endif %}
+            </p>
+            {% if b.settings.multiplier != blank %}
+              <p class="fireball-vip__multiplier">{{ b.settings.multiplier }} points per $1 spent</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Perks table -->
+      <div class="fireball-vip__table-wrap">
+        <table class="fireball-vip__table">
+          <thead>
+            <tr>
+              <th>Perk</th>
+              {% for b in tiers %}<th>{{ b.settings.name }}</th>{% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Points multiplier</td>
+              {% for b in tiers %}
+                <td>{{ b.settings.multiplier }}×</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <td>Exclusive Early Access</td>
+              {% for b in tiers %}
+                <td>{% if b.settings.early_access %}Yes{% else %}No{% endif %}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <td>Birthday Reward</td>
+              {% for b in tiers %}
+                <td>{% if b.settings.birthday %}Yes{% else %}No{% endif %}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <td>VIP-Only Flash Sales</td>
+              {% for b in tiers %}
+                <td>{% if b.settings.flash_sales %}Yes{% else %}No{% endif %}</td>
+              {% endfor %}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    {% endif %}
+  </div>
+
+  <style>
+    .fireball-vip.wrapper{padding:var(--spacer,2rem) 0}
+    .fireball-vip .page-width{max-width:1200px;margin:0 auto}
+    .fireball-vip__title{text-align:center;margin:0 0 .25rem}
+    .fireball-vip__subheading{text-align:center;margin:0 0 1.5rem;color:rgb(var(--color-foreground)/.7)}
+    .fireball-vip__grid{display:grid;gap:1rem;grid-template-columns:repeat(1,minmax(0,1fr));margin-bottom:1.5rem}
+    @media(min-width:750px){.fireball-vip__grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+    .fireball-vip__card{border:1px solid #eee;border-radius:12px;padding:14px;text-align:center;background:rgb(198 26 40 / 0.04)}
+    .fireball-vip__icon{display:block;margin:8px auto 10px;image-rendering:auto}
+    .fireball-vip__name{margin:0 0 .25rem;color:#c61a28}
+    .fireball-vip__unlock{margin:0 0 .25rem}
+    .fireball-vip__multiplier{margin:0;color:rgb(var(--color-foreground)/.75)}
+    .fireball-vip__table-wrap{overflow:auto}
+    .fireball-vip__table{width:100%;border-collapse:collapse}
+    .fireball-vip__table th,.fireball-vip__table td{padding:.6rem .5rem;border-bottom:1px solid #eaeaea;text-align:center}
+    .fireball-vip__table th:first-child,.fireball-vip__table td:first-child{text-align:left}
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Fireball VIP Tiers",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "VIP Program" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Join our VIP program and get exclusive rewards" }
+  ],
+  "blocks": [
+    {
+      "type": "tier",
+      "name": "Tier",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon (PNG/SVG)" },
+        { "type": "text", "id": "name", "label": "Tier name", "default": "Spark" },
+        { "type": "number", "id": "points_to_unlock", "label": "Points to unlock", "default": 0 },
+        { "type": "text", "id": "multiplier", "label": "Points multiplier (e.g. 1, 1.25, 1.5)", "default": "1" },
+        { "type": "checkbox", "id": "early_access", "label": "Early Access", "default": false },
+        { "type": "checkbox", "id": "birthday", "label": "Birthday Reward", "default": true },
+        { "type": "checkbox", "id": "flash_sales", "label": "VIP-Only Flash Sales", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fireball VIP Tiers",
+      "blocks": [
+        { "type": "tier", "settings": { "name": "Spark", "points_to_unlock": 0, "multiplier": "1" } },
+        { "type": "tier", "settings": { "name": "Flame", "points_to_unlock": 1000, "multiplier": "1.25" } },
+        { "type": "tier", "settings": { "name": "Blaze", "points_to_unlock": 2500, "multiplier": "1.5", "early_access": true, "flash_sales": true } },
+        { "type": "tier", "settings": { "name": "Inferno", "points_to_unlock": 5000, "multiplier": "1.75", "early_access": true, "flash_sales": true } },
+        { "type": "tier", "settings": { "name": "Firestorm", "points_to_unlock": 10000, "multiplier": "2", "early_access": true, "flash_sales": true } }
+      ]
+    }
+  ]
+}
+{% endschema %}
