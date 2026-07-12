@@ -1,11 +1,11 @@
 ---
-# template_shopify_theme Properties
+# fireball_enterprise_shopify Properties
 # Central configuration for all scripts and automation
 # Stamped repos: update repo.local/repo.remote to the new repo's name.
 
 repo:
-  local: "$HOME/Development/fireballenterprise/template_shopify_theme"
-  remote: "github.com/fireballenterprise/template_shopify_theme"
+  local: "$HOME/Development/fireballenterprise/fireball_enterprise_shopify"
+  remote: "github.com/fireballenterprise/fireball_enterprise_shopify"
 
 shopify:
   local_config: "tmp/.shopify/config.yml"

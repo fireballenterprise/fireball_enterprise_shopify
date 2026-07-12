@@ -14,8 +14,6 @@ on:
         required: false
         type: string
         default: latest
-  schedule:
-    - cron: "0 12 * * 1"  # weekly Monday (template repo only; brand repos run on demand)
 
 jobs:
   dawn_sync:
