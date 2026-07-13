@@ -55,7 +55,7 @@ tasks/
   instructions/         # Copilot instructions per concern
   prompts/               # /push, /pull, /squash, /rebase, /test, /fix, /shopify, /pr, /pr-notes,
                          # /punch-it-chewy, /versioning, /dawn, /sync-setup, /setup, /docs prompts
-  workflows/            # Thin callers into fireballenterprise/workflows@1 (logic lives there)
+  workflows/            # Thin callers into fireballenterprise/workflows@v1 (logic lives there)
     tests.yml           # PR to development: Ruff + Pylint + theme-check + yamllint + actionlint
     deploy.yml          # Push to development: bump VERSION build + deploy to dev theme (or prd manually)
     release.yml         # Manual: finalize VERSION + promote development → main + deploy prd + GitHub Release
@@ -152,6 +152,6 @@ See [modules/README.md](modules/README.md) for full details.
 
 ## CI
 
-GitHub Actions runs Ruff, Pylint, theme-check, yamllint, and actionlint on PRs into `development` via the `tests.yml` thin caller. Pushes to `development` bump the VERSION build and deploy to the dev theme; the manual Release workflow promotes `development` → `main`, deploys production, and publishes a GitHub Release. All logic lives in [fireballenterprise/workflows](https://github.com/fireballenterprise/workflows), referenced at the floating major tag `@1`.
+GitHub Actions runs Ruff, Pylint, theme-check, yamllint, and actionlint on PRs into `development` via the `tests.yml` thin caller. Pushes to `development` bump the VERSION build and deploy to the dev theme; the manual Release workflow promotes `development` → `main`, deploys production, and publishes a GitHub Release. All logic lives in [fireballenterprise/workflows](https://github.com/fireballenterprise/workflows), referenced at the floating major tag `@v1`.
 
 
