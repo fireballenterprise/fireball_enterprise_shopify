@@ -43,8 +43,9 @@ ALWAYS_EXCLUDE_EXACT_PATHS = {
     ".claude/settings.local.json",
 }
 
-# Shopify/Dawn theme-specific module directories -- never push these; template_python is a
-# generic Python template and has no notion of a Shopify theme.
+# Shopify/Dawn theme-specific module directories -- never push these; the parent template repo
+# (template_shopify) already carries its own generic Dawn base, so brand-specific customizations
+# on top of it never belong upstream.
 BUSINESS_DIRS = {
     "modules/dawn",
     "modules/shopify",

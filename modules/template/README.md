@@ -5,20 +5,21 @@ Syncs shared, generic tooling between this repo and its **parent template repo**
 
 ```yaml
 template:
-  local: "$HOME/path/to/template_python"
-  remote: "github.com/LevonBecker/template_python"
+  local: "$HOME/path/to/template_shopify"
+  remote: "github.com/fireballenterprise/template_shopify"
 ```
 
 ## The chain
 
 ```
-template_python  →  fireball_enterprise_shopify
+template_python  →  template_shopify  →  fireball_enterprise_shopify
 ```
 
-`fireball_enterprise_shopify` syncs only with its direct parent, `template_python`. Shopify/Dawn
-theme-specific tooling (`modules/dawn/`, `modules/shopify/`, and their instruction/prompt/command
-files) never flows upstream — `template_python` is a generic Python template with no notion of a
-Shopify theme. See `modules/template/scope.py` for the exact push scope.
+`fireball_enterprise_shopify` syncs only with its direct parent, `template_shopify` (not the
+grandparent `template_python`). Shopify/Dawn theme-specific tooling (`modules/dawn/`,
+`modules/shopify/`, and their instruction/prompt/command files) never flows upstream — even though
+`template_shopify` itself has its own generic Dawn base, brand-specific customizations on top of it
+never belong there. See `modules/template/scope.py` for the exact push scope.
 
 ## Usage
 

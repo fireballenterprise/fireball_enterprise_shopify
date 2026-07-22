@@ -15,7 +15,7 @@ Modules provide reusable Python logic consumed by invoke tasks, prompts, and scr
 | `modules/dawn/` | Upstream Shopify/dawn tag listing and upgrade-staging — see `dawn.instructions.md` |
 | `modules/repo/` | Git/PR workflow logic (pull, push, log, squash, rebase, pr) |
 | `modules/shopify/` | Shopify CLI, Dawn upgrade, and CLI env var workflows (pull, deploy, upgrade, env) |
-| `modules/template/` | Syncs shared, generic tooling with the parent template repo (template_python) for `/template` |
+| `modules/template/` | Syncs shared, generic tooling with the parent template repo (template_shopify) for `/template` |
 | `modules/versioning/` | Dependency lock and workflow action-ref checks, and `VERSION`-file bumps (`project.py`) — see `versioning.instructions.md` / `version.instructions.md` |
 
 ## Module Conventions

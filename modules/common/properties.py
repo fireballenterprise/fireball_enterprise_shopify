@@ -212,7 +212,7 @@ def get_shopify_theme_id(env: str) -> str:
 
 def get_template_local() -> Path:
     """
-    Get the local path to the shared template repo (template_python), used by /template.
+    Get the local path to the shared template repo (template_shopify), used by /template.
 
     A relative path is resolved against this repo's root.
 
@@ -226,7 +226,7 @@ def get_template_local() -> Path:
 
 def get_template_remote() -> str:
     """
-    Get the template repo's remote (e.g. "github.com/LevonBecker/template_python").
+    Get the template repo's remote (e.g. "github.com/fireballenterprise/template_shopify").
 
     Returns:
         Remote repository reference, without a URL scheme.
