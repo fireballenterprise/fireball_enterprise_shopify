@@ -48,13 +48,15 @@ tasks/
   tests.py              # tests.actionlint, tests.pylint, tests.rufflint, tests.theme_check, tests.yamllint
   uv.py                 # uv.upgrade
   version.py            # version.bump_build, version.bump_release
-  versioning.py         # ver.libs, ver.workflows, ver.all
+  versioning.py         # ver.libs, ver.python, ver.workflows, ver.update, ver.upgrade, ver.project_bump_build, ver.project_bump_release
+  template.py           # template.pull, template.push_diff, template.push_apply, template.push_create_pr
+  upgrade.py            # upgrade (default), upgrade.python, upgrade.libs, upgrade.sync
   dawn.py               # dawn.list, dawn.version, dawn.upgrade
-  combos.py             # Top-level aliases: fix, test
+  combos.py             # Top-level aliases: fix, test, update
 .github/
   instructions/         # Copilot instructions per concern
   prompts/               # /push, /pull, /squash, /rebase, /test, /fix, /shopify, /pr, /pr-notes,
-                         # /punch-it-chewy, /versioning, /dawn, /sync-setup, /setup, /docs prompts
+                         # /punch-it-chewy, /versioning, /dawn, /template, /update, /upgrade, /setup, /docs prompts
   workflows/            # Thin callers into fireballenterprise/workflows@v1 (logic lives there)
     tests.yml           # PR to development: Ruff + Pylint + theme-check + yamllint + actionlint
     deploy.yml          # Push to development: bump VERSION build + deploy to dev theme (or prd manually)
@@ -91,8 +93,14 @@ uv run --no-sync invoke shopify.pull      # Pull live theme from Shopify store �
 uv run --no-sync invoke shopify.upgrade   # Upgrade dawn_vanilla from upstream Shopify/dawn, merge into development
 uv run --no-sync invoke shopify.env       # Print Shopify CLI env var exports (eval "$(uv run --no-sync invoke shopify.env)")
 uv run --no-sync invoke ver.libs       # Check pyproject.toml deps against latest releases, prompt to update
+uv run --no-sync invoke ver.python     # Check the pinned Python version against latest stable, prompt to update
 uv run --no-sync invoke ver.workflows  # Check .github/workflows/ action refs against latest majors, prompt to update
-uv run --no-sync invoke ver.all        # Run every version check (libs, workflows)
+uv run --no-sync invoke ver.update     # Run every version check (libs, python, workflows) — same as top-level `update`
+uv run --no-sync invoke ver.upgrade    # Install the upgrades reviewed via ver.update — same as top-level `upgrade`
+uv run --no-sync invoke template.pull       # Resolve the parent template repo's local path for /template
+uv run --no-sync invoke template.push_diff  # Diff this repo's scoped tooling against the parent template repo
+uv run --no-sync invoke upgrade.python  # Upgrade Python only (installs, rebuilds .venv)
+uv run --no-sync invoke upgrade.libs    # Upgrade libraries only (uv sync --upgrade)
 uv run --no-sync invoke dawn.list      # List upstream Shopify/dawn tags, latest highlighted
 uv run --no-sync invoke dawn.version   # Print the Dawn theme version currently checked out on this branch
 uv run --no-sync invoke dawn.upgrade   # Stage a Dawn upgrade onto a review branch for manual conflict resolution
@@ -133,7 +141,9 @@ After pulling, commit to keep the repo in sync with GUI edits made in the Shopif
 | `/pr` | `uv run --no-sync invoke repo.pr_create` | Create a GitHub Pull Request into `development` |
 | `/pr-notes` | `uv run --no-sync invoke repo.pr_diff` / `repo.pr_notes_save` | Draft PR notes from the branch diff |
 | `/punch-it-chewy` | `uv run --no-sync invoke repo.push` + `/pr-notes` steps | Push the branch, then draft notes and open a PR |
-| `/sync-setup` | `uv run --no-sync invoke skeleton.locate_source` | Sync shared tooling in from the skeleton repo |
+| `/template` | `uv run --no-sync invoke template.pull` | Pull shared tooling updates from the parent template repo (or `template push`) |
+| `/update` | `uv run --no-sync invoke update` | Check pyproject.toml deps, Python version, and workflow action refs vs. latest releases |
+| `/upgrade` | `uv run --no-sync invoke upgrade` | Install the upgrades reviewed via `/update` |
 | `/docs` | — | Audit instructions, `.claude/commands/` sync, and READMEs for drift |
 
 ## Modules
@@ -145,8 +155,8 @@ After pulling, commit to keep the repo in sync with GUI edits made in the Shopif
 | `modules/dawn/` | List upstream Shopify/dawn tags, stage a Dawn upgrade for manual review |
 | `modules/repo/` | Git workflow automation (pull, push, log, squash, rebase) |
 | `modules/shopify/` | Shopify theme pull, Dawn upstream upgrade, and CLI env var workflow |
-| `modules/version/` | Bump the root `VERSION` file for dev deploys and releases |
-| `modules/versioning/` | Dependency lock and workflow action-ref checks |
+| `modules/versioning/` | Dependency lock, Python version, and workflow action-ref checks; bumps the root `VERSION` file |
+| `modules/template/` | Sync shared tooling with the parent template repo for `/template` |
 
 See [modules/README.md](modules/README.md) for full details.
 
